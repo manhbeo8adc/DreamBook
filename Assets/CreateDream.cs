@@ -8,4 +8,9 @@ public class CreateDream : MonoBehaviour
     {
         GameAssets.i.predictionImage.color = Color.red;
     }
+    public void SetUserInputString(string s)
+    {
+        GameAssets.i.userInputString = s;
+        Debug.Log(GameAssets.i.userInputString);
+    }
 }
