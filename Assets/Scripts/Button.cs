@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    public delegate void ButtonClick(string name);
+    public delegate void ButtonClick(GameObject gameObject);
     public event ButtonClick OnButtonClick;
     private void OnMouseDown()
     {
         OnButtonClick += FlipPage.i.ButtonOnClick;
-        OnButtonClick(gameObject.name);
+        OnButtonClick(gameObject);
     }
     private void OnMouseUp()
     {

@@ -14,6 +14,7 @@ public class GameAssets : MonoBehaviour
     public List<Transform> wordsDisplay;
     public Transform Book;
     public GameObject page;
+    public GameObject flipButtons;
 
     void Awake()
     {

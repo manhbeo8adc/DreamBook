@@ -25,8 +25,9 @@ public class GameHandler : MonoBehaviour
             RandomWordsToGuess();
             for (int i = 0; i < 3; i++)
             {
-                GameAssets.i.wordsDisplay[FlipPage.currentPageIndex].
-                    GetChild(i).GetChild(0).GetComponent<TextMeshPro>().text = GameAssets.i.wordsToGuess[i];
+                Transform word = GameAssets.i.wordsDisplay[FlipPage.currentPageIndex].GetChild(i);
+                Destroy(word.GetComponent<BoxCollider2D>());
+                word.GetChild(0).GetComponent<TextMeshPro>().text = GameAssets.i.wordsToGuess[i];
             }
         }
     }

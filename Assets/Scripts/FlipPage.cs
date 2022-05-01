@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FlipPage : MonoBehaviour
 {
@@ -10,9 +11,9 @@ public class FlipPage : MonoBehaviour
     {
         i = GetComponent<FlipPage>();
     }
-    public void ButtonOnClick(string name)
+    public void ButtonOnClick(GameObject gameObject)
     {
-        switch (name)
+        switch (gameObject.name)
         {
             default:
             case "TurnLeftButton":
@@ -27,19 +28,23 @@ public class FlipPage : MonoBehaviour
                 }
             case "Word":
                 {
+                    gameObject.transform.GetChild(0).GetComponent<TextMeshPro>().color = Color.green;
+                    gameObject.transform.GetChild(0).GetComponent<TextMeshPro>().text = "";
+                    InputString.isSelected = gameObject;
+                    break;
+                }
+            case "StartButton":
+                {
 
+                    GameAssets.i.flipButtons.SetActive(true);
+                    gameObject.SetActive(false);
                     break;
                 }
         }
         if (currentPageIndex < 0) currentPageIndex = 0;
         if (currentPageIndex >= GameAssets.i.Book.childCount)
         {
-            GameObject page = Instantiate(GameAssets.i.page);
-            page.name = $"Pages_{currentPageIndex}";
-            page.transform.SetParent(GameAssets.i.Book);
-            GameAssets.i.wordsDisplay.Add(page.transform.GetChild(1));
-            GameAssets.i.itemPicture.Add(page.transform.GetChild(0));
-
+            AddPage();
             GameHandler.instance.AddPageContent(currentPageIndex % 2 == 0);
         }
         foreach (Transform t in GameAssets.i.Book)
@@ -47,5 +52,14 @@ public class FlipPage : MonoBehaviour
             t.gameObject.SetActive(false);
         }
         GameAssets.i.Book.GetChild(currentPageIndex).gameObject.SetActive(true);
+    }
+
+    private static void AddPage()
+    {
+        GameObject page = Instantiate(GameAssets.i.page);
+        page.name = $"Pages_{currentPageIndex}";
+        page.transform.SetParent(GameAssets.i.Book);
+        GameAssets.i.wordsDisplay.Add(page.transform.GetChild(1));
+        GameAssets.i.itemPicture.Add(page.transform.GetChild(0));
     }
 }
