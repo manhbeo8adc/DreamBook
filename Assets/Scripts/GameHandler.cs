@@ -5,20 +5,29 @@ using TMPro;
 
 public class GameHandler : MonoBehaviour
 {
+    public static GameHandler instance;
     private void Awake()
     {
-        int index = Random.Range(0, GameAssets.i.items.Count);
-        GameAssets.i.item = GameAssets.i.items[index];
-        GameAssets.i.itemPicture.GetComponent<SpriteRenderer>().sprite = GameAssets.i.item.image;
-        RandomWordsToGuess();
+        instance = this;
     }
 
-    private void Start()
+    public void AddPageContent(bool generateWord)
     {
-        for(int i = 0; i < 3; i++)
+        // Add image
+        int index = Random.Range(0, GameAssets.i.items.Count);
+        Item item = GameAssets.i.items[index];
+        GameAssets.i.itemForPage.Add(item);
+        GameAssets.i.itemPicture[FlipPage.currentPageIndex].GetComponent<SpriteRenderer>().sprite = item.image;
+
+        //Add words
+        if (generateWord)
         {
-            GameAssets.i.wordsDisplay.transform.
-                GetChild(i).GetChild(0).GetComponent<TextMeshPro>().text = GameAssets.i.wordsToGuess[i];
+            RandomWordsToGuess();
+            for (int i = 0; i < 3; i++)
+            {
+                GameAssets.i.wordsDisplay[FlipPage.currentPageIndex].
+                    GetChild(i).GetChild(0).GetComponent<TextMeshPro>().text = GameAssets.i.wordsToGuess[i];
+            }
         }
     }
 
