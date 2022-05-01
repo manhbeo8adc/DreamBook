@@ -28,8 +28,7 @@ public class FlipPage : MonoBehaviour
                 }
             case "Word":
                 {
-                    gameObject.transform.GetChild(0).GetComponent<TextMeshPro>().color = Color.green;
-                    gameObject.transform.GetChild(0).GetComponent<TextMeshPro>().text = "";
+                    gameObject.transform.Find("text").GetComponent<TextMeshPro>().color = Color.green;
                     InputString.isSelected = gameObject;
                     break;
                 }
@@ -59,7 +58,7 @@ public class FlipPage : MonoBehaviour
         GameObject page = Instantiate(GameAssets.i.page);
         page.name = $"Pages_{currentPageIndex}";
         page.transform.SetParent(GameAssets.i.Book);
-        GameAssets.i.wordsDisplay.Add(page.transform.GetChild(1));
-        GameAssets.i.itemPicture.Add(page.transform.GetChild(0));
+        GameAssets.i.wordsDisplay.Add(page.transform.Find("Words"));
+        GameAssets.i.itemPicture.Add(page.transform.Find("Image"));
     }
 }

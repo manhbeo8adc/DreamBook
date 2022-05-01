@@ -15,6 +15,7 @@ public class GameAssets : MonoBehaviour
     public Transform Book;
     public GameObject page;
     public GameObject flipButtons;
+    public Color defaultColor;
 
     void Awake()
     {

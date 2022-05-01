@@ -39,7 +39,7 @@ public class InputString : MonoBehaviour
         }
         else
         {
-            gameObject.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(212, 204, 63);
+            gameObject.transform.GetChild(0).GetComponent<TextMeshPro>().color = GameAssets.i.defaultColor;
         }
     }
 }

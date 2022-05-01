@@ -456,7 +456,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
@@ -762,8 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPicture: []
-  itemForPage:
-  - {fileID: 0}
+  itemForPage: []
   wordsToGuess:
   - 
   - 
@@ -783,6 +782,7 @@ MonoBehaviour:
   Book: {fileID: 341765944}
   page: {fileID: 5797497009203018622, guid: 537e9e16dd380b64e992ccb3de066f79, type: 3}
   flipButtons: {fileID: 1341785751}
+  defaultColor: {r: 0.86274517, g: 0.95294124, b: 0.6117647, a: 1}
 --- !u!4 &760171580
 Transform:
   m_ObjectHideFlags: 0
