@@ -610,7 +610,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5797497009173256586
 MonoBehaviour:
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Word
+  m_text: word
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8bd6b5857fdbfdc49ba2d6d763a2e3fd, type: 2}
   m_sharedMaterial: {fileID: 394265187378098504, guid: 8bd6b5857fdbfdc49ba2d6d763a2e3fd, type: 2}
@@ -949,7 +949,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5797497009726479603
 MonoBehaviour:
@@ -1216,7 +1216,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5797497010004780853
 MonoBehaviour:
