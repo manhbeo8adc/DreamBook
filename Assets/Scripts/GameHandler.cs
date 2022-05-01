@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class GameHandler : MonoBehaviour
 {
@@ -9,6 +11,15 @@ public class GameHandler : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "MainScene")
+        {
+            SettingBoard.instance.gameObject.SetActive(true);
+        }
     }
 
     public void AddPageContent(bool generateWord)
